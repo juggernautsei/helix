@@ -119,7 +119,7 @@
         ]
       },
       {
-        "label": "Previous Patients",
+        "label": "Previous Patient Finder",
         "menu_id": "pre0",
         "target": "msc",
         "url": "/interface/patient_file/previous.php",
