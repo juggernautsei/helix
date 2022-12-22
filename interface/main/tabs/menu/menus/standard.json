@@ -119,6 +119,18 @@
         ]
       },
       {
+        "label": "Previous Patients",
+        "menu_id": "pre0",
+        "target": "msc",
+        "url": "/interface/patient_file/previous.php",
+        "children": [],
+        "requirement": 0,
+        "acl_req": [
+          "patients",
+          "appt"
+        ]
+      },
+      {
         "label": "Visits",
         "icon": "fa-caret-right",
         "children": [
