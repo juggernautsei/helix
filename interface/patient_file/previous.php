@@ -37,9 +37,11 @@ if (!empty($_POST['lastname'])) {
     </div>
     <div class="mt-3">
         <table class="table stripe-light">
-            <?php
+            <?php echo "<pre>";
                 if (!empty($fetchNames)) {
-                    var_dump($fetchNames);
+                    while ($row = sqlFetchArray($fetchNames)) {
+                        var_dump($row);
+                    }
                 }
             ?>
         </table>
