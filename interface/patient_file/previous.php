@@ -38,7 +38,9 @@ if (!empty($_POST['lastname'])) {
     <div class="mt-3">
         <table class="table stripe-light">
             <?php
-                var_dump($fetchNames);
+                if (!empty($fetchNames)) {
+                    var_dump($fetchNames);
+                }
             ?>
         </table>
     </div>
