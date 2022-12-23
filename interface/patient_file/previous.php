@@ -28,7 +28,7 @@ if (!empty($_POST['lastname'])) {
             <div class="form-group">
                 <label for="lastname">Enter Last Name</label>
                 <input type="text" class="form-control w-10" id="lastname" name="lastname" aria-describedby="nameHelp"
-                placeholder="Partial name like 'will'">
+                placeholder="Partial name like 'will' or whole last name">
                 <small id="nameHelp" class="form-text text-muted">Enter the first three or 4 letters of the last name</small>
             </div>
             <button type="submit" class="btn btn-primary">Find</button>
