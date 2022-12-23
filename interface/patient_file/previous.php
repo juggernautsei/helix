@@ -55,7 +55,7 @@ if (!empty($_POST['lastname'])) {
                 <th>Notes</th>
             </tr>
             <?php
-                if (!empty($fetchData)) {
+                if (!empty($fetchData['first_name'])) {
                     while ($row = sqlFetchArray($fetchData)) {
                         echo "<tr>";
                         echo "<td>" . $row['first_name'] . " " . $row['last_name'] . "</td>";
