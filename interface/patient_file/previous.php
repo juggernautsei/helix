@@ -66,8 +66,9 @@ if (!empty($_POST['lastname'])) {
                         echo "<td>" . $row['notes'] . "</td>";
                         echo "<tr>";
                     }
-                } else {
-                    print $msg;
+                }
+                if (!empty($msg)) {
+                    echo $msg;
                 }
             ?>
         </table>
