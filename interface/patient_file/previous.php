@@ -20,6 +20,16 @@ if (!empty($_POST['lastname'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php echo Header::setupHeader(); ?>
     <title>Previous Patient Finder</title>
+    <script>
+        function empty() {
+            let x;
+            x = document.getElementById("lastname").value;
+            if (x === "") {
+                alert("Enter a name");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -27,11 +37,12 @@ if (!empty($_POST['lastname'])) {
         <form method="post" action="previous.php">
             <div class="form-group">
                 <label for="lastname">Enter Last Name</label>
-                <input type="text" class="form-control w-10" id="lastname" name="lastname" aria-describedby="nameHelp"
+                <input type="text" class="form-control w-10" id="lastname" name="lastname"
+                       aria-describedby="nameHelp"
                 placeholder="Partial name like 'will' or whole last name">
                 <small id="nameHelp" class="form-text text-muted">Enter the first three or 4 letters of the last name</small>
             </div>
-            <button type="submit" class="btn btn-primary">Find</button>
+            <button type="submit" class="btn btn-primary" onClick="return empty()">Find</button>
         </form>
     </div>
     <div class="mt-3">
