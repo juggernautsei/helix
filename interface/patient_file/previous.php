@@ -8,6 +8,8 @@ if (!empty($_POST['lastname'])) {
     $sql = "SELECT * FROM `patient_data_previous` WHERE last_name LIKE ?";
     $lastname = "%" . $_POST['lastname'] . "%";
     $fetchData = sqlStatement($sql, [$lastname]);
+} else {
+    $msg = "No one by that name found";
 }
 
 ?>
@@ -55,8 +57,7 @@ if (!empty($_POST['lastname'])) {
                 <th>Notes</th>
             </tr>
             <?php
-                if (!empty($fetchData['first_name'])) {
-                    var_dump($fetchData);
+                if (!empty($fetchData)) {
                     while ($row = sqlFetchArray($fetchData)) {
                         echo "<tr>";
                         echo "<td>" . $row['first_name'] . " " . $row['last_name'] . "</td>";
@@ -66,7 +67,7 @@ if (!empty($_POST['lastname'])) {
                         echo "<tr>";
                     }
                 } else {
-                    print "No one with that name found in table";
+                    print $msg;
                 }
             ?>
         </table>
