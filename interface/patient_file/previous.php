@@ -7,6 +7,8 @@ use OpenEMR\Core\Header;
 if (!empty($_POST['lastname'])) {
     echo "Looking for " . $_POST['lastname'] . " Coming soon near you!";
     $sql = "SELECT * FROM `patient_data_previous` WHERE last_name LIKE ?";
+    $lastname = "%" . $_POST['lastname'] . "%";
+    $fetchNames = sqlStatement($sql, [$lastname]);
 }
 
 ?>
@@ -35,7 +37,9 @@ if (!empty($_POST['lastname'])) {
     </div>
     <div class="mt-3">
         <table class="table stripe-light">
-
+            <?php
+                var_dump($fetchNames);
+            ?>
         </table>
     </div>
 </div>
