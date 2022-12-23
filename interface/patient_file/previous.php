@@ -58,6 +58,5 @@ if (!empty($_POST['lastname'])) {
         </table>
     </div>
 </div>
-    <h1>Under construction</h1>
 </body>
 </html>
