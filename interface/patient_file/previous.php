@@ -56,6 +56,7 @@ if (!empty($_POST['lastname'])) {
             </tr>
             <?php
                 if (!empty($fetchData['first_name'])) {
+                    var_dump($fetchData);
                     while ($row = sqlFetchArray($fetchData)) {
                         echo "<tr>";
                         echo "<td>" . $row['first_name'] . " " . $row['last_name'] . "</td>";
