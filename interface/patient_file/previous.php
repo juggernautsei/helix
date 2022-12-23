@@ -5,7 +5,6 @@ require_once __DIR__ . "/../globals.php";
 use OpenEMR\Core\Header;
 
 if (!empty($_POST['lastname'])) {
-    echo "Looking for " . $_POST['lastname'] . " Coming soon near you!";
     $sql = "SELECT * FROM `patient_data_previous` WHERE last_name LIKE ?";
     $lastname = "%" . $_POST['lastname'] . "%";
     $fetchData = sqlStatement($sql, [$lastname]);
@@ -48,7 +47,7 @@ if (!empty($_POST['lastname'])) {
                 if (!empty($fetchData)) {
                     while ($row = sqlFetchArray($fetchData)) {
                         echo "<tr>";
-                        echo "<td>" . $row['first_name'] . "&nsbp" . $row['last_name'] . "</td>";
+                        echo "<td>" . $row['first_name'] . " " . $row['last_name'] . "</td>";
                         echo "<td>" . $row['phone'] . "</td>";
                         echo "<td>" . $row['email'] . "</td>";
                         echo "<td>" . $row['notes'] . "</td>";
