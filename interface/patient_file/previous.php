@@ -8,7 +8,7 @@ if (!empty($_POST['lastname'])) {
     echo "Looking for " . $_POST['lastname'] . " Coming soon near you!";
     $sql = "SELECT * FROM `patient_data_previous` WHERE last_name LIKE ?";
     $lastname = "%" . $_POST['lastname'] . "%";
-    $fetchNames = sqlStatement($sql, [$lastname]);
+    $fetchData = sqlStatement($sql, [$lastname]);
 }
 
 ?>
@@ -37,10 +37,22 @@ if (!empty($_POST['lastname'])) {
     </div>
     <div class="mt-3">
         <table class="table stripe-light">
-            <?php echo "<pre>";
-                if (!empty($fetchNames)) {
-                    while ($row = sqlFetchArray($fetchNames)) {
-                        var_dump($row);
+            <caption>Previous patient look up</caption>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Notes</th>
+            </tr>
+            <?php
+                if (!empty($fetchData)) {
+                    while ($row = sqlFetchArray($fetchData)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['first_name'] . "&nsbp" . $row['last_name'] . "</td>";
+                        echo "<td>" . $row['phone'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['notes'] . "</td>";
+                        echo "<tr>";
                     }
                 }
             ?>
