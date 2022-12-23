@@ -53,6 +53,8 @@ if (!empty($_POST['lastname'])) {
                         echo "<td>" . $row['notes'] . "</td>";
                         echo "<tr>";
                     }
+                } else {
+                    print "No one with that name found in table";
                 }
             ?>
         </table>
